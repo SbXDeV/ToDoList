@@ -23,4 +23,5 @@ Route::get('add', function () {
 })->name('add');
 
 Route::get('/', 'App\Http\Controllers\ToDoController@home')->name('home');
+Route::get('delete/{id}', 'App\Http\Controllers\ToDoController@DeleteTodo')->name('delete_post');
 Route::post('add/submit','App\Http\Controllers\ToDoController@submit')->name('contact-form');

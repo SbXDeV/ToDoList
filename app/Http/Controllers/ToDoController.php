@@ -24,5 +24,8 @@ class ToDoController extends Controller {
     $todo_list = new todo();
     return view('to-do', ['data' => $todo_list->orderBy('created_at', 'desc')->get()]);
   }
-
+  public function DeleteTodo($id) {
+    todo::find($id)->delete();
+    return redirect()->route('home', )->with('success', 'Напоминание было удалено!');
+  }
 }

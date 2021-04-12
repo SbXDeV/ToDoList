@@ -54,21 +54,21 @@
   <h1 class="text-center">Список напомнинаний</h1>
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Напоминание</th>
       <th scope="col">Содержание</th>
       <th scope="col">Место</th>
       <th scope="col">Дата</th>
+      <th scope="col">Действия</th>
     </tr>
   </thead>
   <tbody>
         @foreach($data as $el)
     <tr>
-      <th scope="row">{{ $el->id }}</th>
       <td>{{ $el->name }}</td>
       <td>{{ $el->body }}</td>
       <td>{{ $el->locate }}</td>
       <td>{{ $el->created_at}}</td>
+      <td><a href="{{ route('delete_post', $el->id) }}"><button class="btn btn-danger btn-sm">Удаление</button></a></td>
     </tr>
       @endforeach
   </tbody>
